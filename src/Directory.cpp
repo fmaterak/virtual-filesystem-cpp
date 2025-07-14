@@ -46,29 +46,3 @@ std::string Directory::getPath() const
 }
 
 NodeType Directory::type() const { return NodeType::Directory; }
-
-// ------------------- src/File.cpp -------------------
-#include "File.hpp"
-File::File(std::string name) : Node(std::move(name)) {}
-NodeType File::type() const { return NodeType::File; }
-
-// ------------------- include/Node.hpp -------------------
-#pragma once
-#include <string>
-
-enum class NodeType
-{
-    File,
-    Directory
-};
-
-struct Directory; // forward
-
-struct Node
-{
-    std::string name;
-    Directory *parent = nullptr;
-    explicit Node(std::string name);
-    virtual NodeType type() const = 0;
-    virtual ~Node() = default;
-};
