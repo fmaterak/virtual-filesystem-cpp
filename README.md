@@ -43,8 +43,6 @@ nlohmann/json (integrated via FetchContent or header)
 
 📝 Example Usage
 shell
-Kopiuj
-Edytuj
 > mkdir projects
 > cd projects
 > touch notes.txt
